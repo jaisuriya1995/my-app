@@ -25,7 +25,7 @@ node{
    }
   stage('Nexus Image Push'){
    sh "docker login -u admin -p admin123 13.233.160.223:8083"
-   sh "docker tag saidamo/myweb:0.0.2 13.233.160.223:8083/damo:1.0.0"
+   sh "docker tag jaisuriya1995/myweb:0.0.2 13.233.160.223:8083/damo:1.0.0"
    sh 'docker push 13.233.160.223:8083/damo:1.0.0'
    }
 
@@ -37,6 +37,6 @@ node{
 		//  do nothing if there is an exception
 	}
    stage('Docker deployment'){
-   sh 'docker run -d -p 8090:8080 --name tomcattest saidamo/myweb:0.0.2' 
+   sh 'docker run -d -p 8090:8080 --name tomcattest jaisuriya1995/myweb:0.0.2' 
    }
 }
